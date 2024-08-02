@@ -138,7 +138,10 @@ INSERT INTO avaliacao (nota1, nota2, nota3, nota4, fk_aluno_id) VALUES
 (25, 24, 22, 23, 4), -- Notas para o aluno com id 4
 (19, 18, 20, 21, 5); -- Notas para o aluno com id 5
 
-
+ALTER TABLE avaliacao ADD CONSTRAINT FK_avaliacao_2
+    FOREIGN KEY (fk_aluno_id)
+    REFERENCES aluno (id)
+    ON DELETE CASCADE;
 
 select * from avaliacao;
 
@@ -147,4 +150,78 @@ select * from aluno;
 select al.ra,av.nota1,av.nota2,av.nota3,av.nota4
 	from aluno al join avaliacao av
     on av.fk_aluno_id = al.id;
+
+-- Tipos de variaveis
+-- int : inteiro
+-- variável quantitativa
+-- variável independente e dependente
+-- variável independente quantitativa 
+
+-- 02/08/2024
+
+ALTER TABLE aluno ADD COLUMN nome VARCHAR(80);
+ALTER TABLE aluno ADD COLUMN tempoestudo INT NOT NULL;
+ALTER TABLE aluno ADD COLUMN rendafamiliar DECIMAL(10, 2);
+describe aluno;
+
+select * from aluno;
+
+-- ra, nome, tempoestudo, rendafamiliar,
+-- Desafio:
+-- 50 alunos com todos agora.
+-- Gpt gerando com IA.
+
+select * from aluno order by id desc limit 1;
+ 
+ insert aluno(ra,nome,tempoestudo,rendafamiliar)values('12345695','Juarez',1,4567.98);
+ 
+INSERT INTO aluno (ra, nome, tempoestudo, rendafamiliar) VALUES
+('12345704', 'Maria', 2, 3210.45),
+('12345705', 'João', 4, 2456.78),
+('12345706', 'Luana', 3, 7890.12),
+('12345707', 'Pedro', 1, 1234.56),
+('12345708', 'Ana', 5, 4567.89),
+('12345709', 'Roberto', 2, 6789.01),
+('12345710', 'Camila', 3, 2345.67),
+('12345711', 'Fernando', 4, 6789.01),
+('12345712', 'Isabela', 1, 3456.78),
+('12345713', 'Carlos', 5, 7890.12),
+('12345714', 'Juliana', 2, 1234.56),
+('12345715', 'Rafael', 3, 5678.90),
+('12345716', 'Tatiane', 4, 2345.67),
+('12345717', 'Lucas', 1, 6789.01),
+('12345718', 'Sofia', 5, 4567.89),
+('12345719', 'Eduardo', 2, 7890.12),
+('12345720', 'Patrícia', 3, 3456.78),
+('12345721', 'Bruno', 4, 5678.90),
+('12345722', 'Mariana', 1, 2345.67),
+('12345723', 'Gustavo', 5, 6789.01),
+('12345724', 'Aline', 2, 1234.56),
+('12345725', 'Felipe', 3, 7890.12),
+('12345726', 'Larissa', 4, 5678.90),
+('12345727', 'Viviane', 1, 3456.78),
+('12345728', 'Marcelo', 5, 6789.01),
+('12345729', 'Cristina', 2, 2345.67),
+('12345730', 'Sérgio', 3, 4567.89),
+('12345731', 'Gabriel', 4, 7890.12),
+('12345732', 'Paula', 1, 1234.56),
+('12345733', 'Fábio', 5, 5678.90),
+('12345734', 'Marcos', 2, 6789.01),
+('12345735', 'Vanessa', 3, 3456.78),
+('12345736', 'Ricardo', 4, 2345.67),
+('12345737', 'Carla', 1, 7890.12),
+('12345738', 'Joana', 5, 4567.89),
+('12345739', 'Natan', 2, 1234.56),
+('12345740', 'Eduarda', 3, 6789.01),
+('12345741', 'José', 4, 5678.90),
+('12345742', 'Elaine', 1, 3456.78),
+('12345743', 'Gabriela', 5, 2345.67),
+('12345744', 'Renato', 2, 7890.12),
+('12345745', 'Tatiane', 3, 4567.89),
+('12345746', 'Beatriz', 4, 6789.01),
+('12345747', 'João', 1, 5678.90),
+('12345748', 'Fernanda', 5, 1234.56),
+('12345749', 'Lucas', 2, 3456.78),
+('12345750', 'Amanda', 3, 7890.12);
+
 
