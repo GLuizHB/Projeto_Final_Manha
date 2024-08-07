@@ -87,7 +87,7 @@ SELECT
 	 aluno a 
      ON d.fk_aluno_id = a.id;
      
-     
+	
      
 
 -- 01/08/2024
@@ -173,9 +173,9 @@ select * from aluno;
 
 select * from aluno order by id desc limit 1;
  
- insert aluno(ra,nome,tempoestudo,rendafamiliar)values('12345695','Juarez',1,4567.98);
  
 INSERT INTO aluno (ra, nome, tempoestudo, rendafamiliar) VALUES
+('12345695', 'Juarez', 1, 4567.98),
 ('12345704', 'Maria', 2, 3210.45),
 ('12345705', 'João', 4, 2456.78),
 ('12345706', 'Luana', 3, 7890.12),
@@ -225,3 +225,20 @@ INSERT INTO aluno (ra, nome, tempoestudo, rendafamiliar) VALUES
 ('12345750', 'Amanda', 3, 7890.12);
 
 
+-- variaveis para credenciais
+
+-- user = "root"
+-- password = "senai@123"
+-- host = "localhost"
+-- database = "projetodiario1"
+
+-- passo 2 - url de conexão
+
+-- passo 3 - create_engine do SQLALchemy (conectar)
+
+-- passo 4 - consulta de alunos
+
+-- passo 5 - criar uim dataframe no pandas
+     -- pd.read_sql(query)
+
+-- passo 6 - mostrar os cinco primeiros
